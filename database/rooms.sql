@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -38,9 +39,9 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `Ummaconnect`.`library` ;
 
 CREATE TABLE IF NOT EXISTS `Ummaconnect`.`library` (
-  `organization_id` INT NOT NULL,
+  `library_id` INT NOT NULL,
   `name` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`organization_id`))
+  PRIMARY KEY (`library_id`))
 ENGINE = InnoDB;
 
 
@@ -51,10 +52,10 @@ DROP TABLE IF EXISTS `Ummaconnect`.`room` ;
 
 CREATE TABLE IF NOT EXISTS `Ummaconnect`.`room` (
   `room_id` INT NOT NULL,
-  `organization` VARCHAR(50) NULL,
-  `organization_id` INT NOT NULL,
+  `name` VARCHAR(50) NULL,
+  `library_id` INT NOT NULL,
   PRIMARY KEY (`room_id`),
-  INDEX `fk_room1_idx` (`organization_id` ASC),
+  INDEX `fk_room1_idx` (`library_id` ASC),
   CONSTRAINT `fk_room1`
     FOREIGN KEY (`organization_id`)
     REFERENCES `Ummaconnect`.`library` (`organization_id`)
@@ -174,3 +175,20 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+=======
+DROP DATABASE IF EXISTS rooms;
+CREATE DATABASE rooms;
+
+create database rooms;
+
+use rooms;
+
+
+
+
+
+
+
+
+
+>>>>>>> 3ec069853f881de6d0638fc8937cf9366267d92e
