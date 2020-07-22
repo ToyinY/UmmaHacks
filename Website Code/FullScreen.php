@@ -120,25 +120,39 @@
 						</li>
 					-->
 					</ol><!-- /fs-fields -->
-					<a href="Thankyou.html"> <button class="fs-submit" type="submit">Send answers</button> </a>
+					<button class="fs-submit" type="submit">Send answers</button>
 				</form><!-- /fs-form -->
 
 				<?php
 						if(isset($_POST["submit"])){
-
 							$dbServername = "localhost";
 							$dbUsername = "root";
 							$dbPassword = "";
 							$dbName= "Ummaconnect";
 
-						$conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName);
+							$conn = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName);
 
 						if ($conn->connect_error) {
                				die("Connection failed: " . $conn->connect_error);
             				}
-         
 
-						$sql = "INSERT INTO  User (name) values ('".$_POST["name"]."');";
+            			$sql = "INSERT INTO  User (name, dob, gender, password, email, phone) values ('".$_POST["name"]."', '".$_POST["dob"]."', '".$_POST["gender"]."', '".$_POST["pwd"]."','".$_POST["email"]."', '".$_POST["phone"]."');";
+
+            			mysqli_query($conn, $sql);
+
+            			/*if (mysqli_query($conn, $sql)) {
+               					echo "You have registered!";
+            				} else {
+               					echo "Error: " . $sql . "" . mysqli_error($conn);
+            				}*/
+
+            			if (mysqli_num_rows($sql) > 0) {
+							echo "You have registered!";
+            			} else {
+            				echo "you failed to register";
+            			}
+						$conn->close();
+					}
 				?>
 				
 			</div><!-- /fs-form-wrap -->

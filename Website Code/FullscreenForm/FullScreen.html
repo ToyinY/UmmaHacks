@@ -28,15 +28,16 @@
 						<a class="codrops-icon codrops-icon-info" href="#"><span>This is a demo for a fullscreen form</span></a>
 					</div>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+				<!-- registration form -->
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="" method="POST">
 					<ol class="fs-fields">
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
-							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" required/>
+							<input class="fs-anim-lower" id="q1" name="name" type="text" placeholder="Dean Moriarty" required/>
 						</li>
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your email address?</label>
-							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/>
+							<input class="fs-anim-lower" id="q2" name="email" type="email" placeholder="dean@road.us" required/>
 						</li>
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" for="q3" data-info="This will help us know what kind of service you need">What's your priority for your new website?</label>
@@ -82,6 +83,23 @@
 						</li>
 					</ol><!-- /fs-fields -->
 					<button class="fs-submit" type="submit">Send answers</button>
+					<?php
+						if(isset($_POST["submit"])){
+
+							$dbServername = "localhost";
+							$dbUsername = "root";
+							$dbPassword = "";
+							$dbName= "Ummaconnect";
+
+						$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+
+						if ($conn->connect_error) {
+               				die("Connection failed: " . $conn->connect_error);
+            				}
+         
+
+						$sql = "INSERT INTO  User (name) values ('".$_POST["name"]."');";
+					?>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
