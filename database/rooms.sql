@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `Ummaconnect`.`User` (
   `name` VARCHAR(50) NOT NULL,
   `dob` DATETIME NOT NULL,
   `gender` VARCHAR(50) NULL,
-  `username` VARCHAR(50) NOT NULL,
   `password` VARCHAR(50) NOT NULL,
   `email` VARCHAR(50) NOT NULL,
   `phone` VARCHAR(50) NULL,
