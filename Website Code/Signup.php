@@ -34,11 +34,13 @@
                             <div class="form-radio">
                                 <label for="gender">Gender</label>
                                 <div class="form-flex">
-                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
-                                    <label for="male">Male</label>
-                                    <input type="radio" name="gender" value="female" id="female" />
+                                    <input type="radio" name="gender" value="female" id="female" checked="checked" />
                                     <label for="female">Female</label>
-                                    <input type="radio" id="other" name="gender" value="other">
+                                    <input type="radio" name="gender" value="male" id="male" />
+                                    <label for="male">Male</label>
+                                    <!--<input type="radio"  name="gender" value="non-binary" id="non-binary"/>
+                                    <label for="other">Non-binary</label>-->
+                                    <input type="radio" name="gender" value="other" id="other" />
                                     <label for="other">Other</label>
                                 </div>
                             </div>
@@ -46,7 +48,7 @@
                             <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="number" class="form-input" name="email" id="email" />
+                                <input type="email" class="form-input" name="email" id="email" />
                             </div>
                             <div class="form-group">
                                 <label for="phone_number">Phone number</label>
@@ -65,10 +67,7 @@
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
-                        </div>
-
-
-                        
+                        </div>     
                     </form>
                 </div>
             </div>
@@ -90,13 +89,16 @@
                     die("Connection failed: " . $conn->connect_error);
                 }
 
-            $sql = "INSERT INTO  User (name, dob, gender, password, email, phone) values ('".$_POST["name"]."', '".$_POST["dob"]."', '".$_POST["gender"]."', '".$_POST["pwd"]."','".$_POST["email"]."', '".$_POST["phone"]."');";
+            $sql = "INSERT INTO User (name, dob, gender, password, email, phone) values ('".$_POST["name"]."', '".$_POST["dob"]."', '".$_POST["gender"]."', '".$_POST["pwd"]."','".$_POST["email"]."', '".$_POST["phone"]."');";
 
             if (mysqli_query($conn, $sql)) {
                     echo "You have registered!";
                 } else {
                     echo "Error: " . $sql . "" . mysqli_error($conn);
                 }
+
+            header("Location: Thankyou.html");
+
             $conn->close();
 
         }

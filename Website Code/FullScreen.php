@@ -29,24 +29,28 @@
 				</div>
 				
 				<!-- This is the form to sign up -->
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="" method="POST">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="POST">
 					<ol class="fs-fields">
 						<!-- This helps them fill out their name -->
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
 							<input class="fs-anim-lower" id="q1" name="name" type="text" placeholder="Toph Bei Fong" required/>
 						</li>
-						<!--<li>
+					<!--	<li>
 							<label class="fs-field-label fs-anim-upper" for="gender" data-info="Tell us more about you...">What's your gender?</label>
-                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
-                                    <label for="male">Male</label>
+                                    <input type="radio" id="male" name="gender" value="male">
+									<label for="male">Male</label>
                                     <br>
-                                    <input type="radio" name="gender" value="female" id="female"/>
+                                    <input type="radio" name="gender" value="female" id="female">
                                     <label for="female">Female</label>
-
+                                    <br>
+                                    <input type="radio" id="Non-binary" name="gender" value="Non-binary">
+									<label for="other">Non-binary</label>
+									<br>
+									<input type="radio" id="other" name="gender" value="other">
+									<label for="other">other</label>
 						</li>
-					-->
-					<!--<div class="fs-field-label fs-anim-upper">
+					<div class="fs-field-label fs-anim-upper">
                                 <label for="gender">Gender</label>
                                 <div class="form-flex">
                                     <input type="radio" name="gender" value="male" id="male" checked="checked" />
@@ -57,15 +61,22 @@
                                 </div>
                             </div>
                         -->
-
-                        <!-- Gender text type -->
+                        	<!-- Gender text type -->
                         <li>
 							<label class="fs-field-label fs-anim-upper" for="q4" data-info="Tell us more about you...">What's your birth date?</label>
 							<input class="fs-anim-lower" id="q4" name="dob" type="date" placeholder="01/01/2020" required/>
 						</li>
-                        <li>
+                        <!--<li>
 							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your gender?</label>
-							<input class="fs-anim-lower" id="q2" name="gender" type="text" placeholder="woman" required/>
+							<input class="fs-anim-lower" id="q2" name="gender" type="text" placeholder="female, male, or other" required/>
+						</li>-->
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q6" data-info="This will help us know what kind of service you need">What is your gender?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q6b" name="gender" type="radio" value="conversion"/><label for="female" class="radio-conversion">female</label></span>
+								<span><input id="q6c" name="gender" type="radio" value="social"/><label for="male" class="radio-social">male</label></span>
+								<span><input id="q6a" name="gender" type="radio" value="mobile"/><label for="other" class="radio-mobile">other</label></span>
+							</div>
 						</li>
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q8">Please Choose a password</label>
@@ -120,7 +131,7 @@
 						</li>
 					-->
 					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Send answers</button>
+					<a href="Thankyou.html"> <button class="fs-submit" type="submit" name="submit">Send answers</button> </a>
 				</form><!-- /fs-form -->
 
 				<?php
@@ -140,19 +151,14 @@
 
             			mysqli_query($conn, $sql);
 
-            			/*if (mysqli_query($conn, $sql)) {
+            			if (mysqli_query($conn, $sql)) {
                					echo "You have registered!";
             				} else {
                					echo "Error: " . $sql . "" . mysqli_error($conn);
-            				}*/
-
-            			if (mysqli_num_rows($sql) > 0) {
-							echo "You have registered!";
-            			} else {
-            				echo "you failed to register";
-            			}
+            				}
 						$conn->close();
 					}
+					
 				?>
 				
 			</div><!-- /fs-form-wrap -->

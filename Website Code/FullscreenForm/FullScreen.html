@@ -83,23 +83,6 @@
 						</li>
 					</ol><!-- /fs-fields -->
 					<button class="fs-submit" type="submit">Send answers</button>
-					<?php
-						if(isset($_POST["submit"])){
-
-							$dbServername = "localhost";
-							$dbUsername = "root";
-							$dbPassword = "";
-							$dbName= "Ummaconnect";
-
-						$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
-
-						if ($conn->connect_error) {
-               				die("Connection failed: " . $conn->connect_error);
-            				}
-         
-
-						$sql = "INSERT INTO  User (name) values ('".$_POST["name"]."');";
-					?>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
