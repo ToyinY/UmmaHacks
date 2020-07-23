@@ -36,60 +36,36 @@
 							<label class="fs-field-label fs-anim-upper" for="q1">What's your name?</label>
 							<input class="fs-anim-lower" id="q1" name="name" type="text" placeholder="Toph Bei Fong" required/>
 						</li>
-					<!--	<li>
-							<label class="fs-field-label fs-anim-upper" for="gender" data-info="Tell us more about you...">What's your gender?</label>
-                                    <input type="radio" id="male" name="gender" value="male">
-									<label for="male">Male</label>
-                                    <br>
-                                    <input type="radio" name="gender" value="female" id="female">
-                                    <label for="female">Female</label>
-                                    <br>
-                                    <input type="radio" id="Non-binary" name="gender" value="Non-binary">
-									<label for="other">Non-binary</label>
-									<br>
-									<input type="radio" id="other" name="gender" value="other">
-									<label for="other">other</label>
-						</li>
-					<div class="fs-field-label fs-anim-upper">
-                                <label for="gender">Gender</label>
-                                <div class="form-flex">
-                                    <input type="radio" name="gender" value="male" id="male" checked="checked" />
-                                    <label for="male">Male</label>
-    
-                                    <input type="radio" name="gender" value="female" id="female" />
-                                    <label for="female">Female</label>
-                                </div>
-                            </div>
-                        -->
-                        	<!-- Gender text type -->
+						<!-- This helps them fill out their dob -->
                         <li>
 							<label class="fs-field-label fs-anim-upper" for="q4" data-info="Tell us more about you...">What's your birth date?</label>
 							<input class="fs-anim-lower" id="q4" name="dob" type="date" placeholder="01/01/2020" required/>
 						</li>
-                        <!--<li>
-							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">What's your gender?</label>
-							<input class="fs-anim-lower" id="q2" name="gender" type="text" placeholder="female, male, or other" required/>
-						</li>-->
+						<!-- This helps them fill out their gender -->
 						<li data-input-trigger>
-							<label class="fs-field-label fs-anim-upper" for="q6" data-info="This will help us know what kind of service you need">What is your gender?</label>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="Tell us more about you...">What is your gender?</label>
 							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-								<span><input id="q6b" name="gender" type="radio" value="conversion"/><label for="female" class="radio-conversion">female</label></span>
-								<span><input id="q6c" name="gender" type="radio" value="social"/><label for="male" class="radio-social">male</label></span>
-								<span><input id="q6a" name="gender" type="radio" value="mobile"/><label for="other" class="radio-mobile">other</label></span>
+								<span><input id="q2b" name="gender" type="radio" value="female"/><label for="q2b" class="radio-conversion">female</label></span>
+								<span><input id="q2c" name="gender" type="radio" value="male"/><label for="male" class="radio-social">male</label></span>
+								<span><input id="q2a" name="gender" type="radio" value="other"/><label for="other" class="radio-mobile">other</label></span>
 							</div>
 						</li>
+						<!-- This helps them fill out their password -->
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q8">Please Choose a password</label>
 							<input class="fs-anim-lower" id="q8" name="pwd" type="password" placeholder="Password Here"></textarea>
 						</li>
+						<!-- This helps them fill out their email -->
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q3" data-info="We won't send you spam, we promise...">What's your email address?</label>
 							<input class="fs-anim-lower" id="q3" name="email" type="email" placeholder="drinkcactusjuice@gmail.com" required/>
 						</li>
+						<!-- This helps them fill out their phone number -->
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q5" data-info="Tell us your phone number so we can send a push notification...">What's your phone number?</label>
 							<input class="fs-anim-lower" id="q5" name="phone" type="tel" placeholder="1-800-BASINGS" required/>
 						</li>
+						<!-- This helps them fill out their interests -->
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" for="q6" data-info="This will help us know what kind of service you need">What are some of your interests?</label>
 							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
@@ -98,6 +74,7 @@
 								<span><input id="q6a" name="q6" type="radio" value="mobile"/><label for="q6a" class="radio-mobile">Learning metal bending</label></span>
 							</div>
 						</li>
+						<!-- This helps them what library they want to be in -->
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" data-info="Choose a library to get started">What library would you like to be a part of?</label>
 							<select class="cs-select cs-skin-boxes fs-anim-lower">
@@ -124,16 +101,11 @@
 								<option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
 							</select>
 						</li>
-						
-						<!--<li>
-							<label class="fs-field-label fs-anim-upper" for="q5">What's your budget?</label>
-							<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100"/>
-						</li>
-					-->
 					</ol><!-- /fs-fields -->
 					<a href="Thankyou.html"> <button class="fs-submit" type="submit" name="submit">Send answers</button> </a>
 				</form><!-- /fs-form -->
 
+				<!-- this updates the database -->
 				<?php
 						if(isset($_POST["submit"])){
 							$dbServername = "localhost";
