@@ -29,7 +29,7 @@
 				</div>
 				
 				<!-- This is the form to sign up -->
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="POST">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="POST" action="submit.php">
 					<ol class="fs-fields">
 						<!-- This helps them fill out their name -->
 						<li>
@@ -47,6 +47,7 @@
 							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 								<span><input id="q2b" name="gender" type="radio" value="female"/><label for="q2b" class="radio-conversion">female</label></span>
 								<span><input id="q2c" name="gender" type="radio" value="male"/><label for="q2c" class="radio-social">male</label></span>
+								<span><input id="q2d" name="gender" type="radio" value="non-binary"/><label for="q2d" class="radio-social">non-binary</label></span>
 								<span><input id="q2a" name="gender" type="radio" value="other"/><label for="q2a" class="radio-mobile">other</label></span>
 							</div>
 						</li>
@@ -109,10 +110,10 @@
 							</select>
 						</li>
 					</ol><!-- /fs-fields -->
-					<a href="Thankyou.html"> <button class="fs-submit" type="submit" name="submit">Send answers</button> </a>
+					<button class="fs-submit" type="submit" name="submit">Send answers</button>
 				</form><!-- /fs-form -->
 
-				<!-- this updates the database -->
+				<!-- this updates the database 
 				<?php
 						if(isset($_POST["submit"])){
 							$dbServername = "localhost";
@@ -131,16 +132,16 @@
 
             			mysqli_query($conn, $sql);
 
-            			/*if (mysqli_query($conn, $sql)) {
+            			if (mysqli_query($conn, $sql)) {
                					//echo "You have registered!";
-               					//header ("Location: Thankyou.html");
+               					header ("Location: Thankyou.html");
             				} else {
                					echo "Error: " . $sql . "" . mysqli_error($conn);
             				}
-						$conn->close();*/
+						$conn->close();
 					}
 					
-				?>
+				?>-->
 				
 			</div><!-- /fs-form-wrap -->
 
