@@ -56,8 +56,8 @@ CREATE TABLE IF NOT EXISTS `Ummaconnect`.`room` (
   PRIMARY KEY (`room_id`),
   INDEX `fk_room1_idx` (`library_id` ASC),
   CONSTRAINT `fk_room1`
-    FOREIGN KEY (`library_id`)
-    REFERENCES `Ummaconnect`.`library` (`library_id`)
+    FOREIGN KEY (`organization_id`)
+    REFERENCES `Ummaconnect`.`library` (`organization_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -154,9 +154,9 @@ DROP TABLE IF EXISTS `Ummaconnect`.`User_has_library` ;
 
 CREATE TABLE IF NOT EXISTS `Ummaconnect`.`User_has_library` (
   `User_id` INT NOT NULL,
-  `library_id` INT NOT NULL,
-  PRIMARY KEY (`User_id`, `library_id`),
-  INDEX `fk_User_has_library2_idx` (`library_id` ASC),
+  `organization_id` INT NOT NULL,
+  PRIMARY KEY (`User_id`, `organization_id`),
+  INDEX `fk_User_has_library2_idx` (`organization_id` ASC),
   INDEX `fk_User_has_library1_idx` (`User_id` ASC),
   CONSTRAINT `fk_User_has_library1`
     FOREIGN KEY (`User_id`)
@@ -164,8 +164,8 @@ CREATE TABLE IF NOT EXISTS `Ummaconnect`.`User_has_library` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_User_has_library2`
-    FOREIGN KEY (`library_id`)
-    REFERENCES `Ummaconnect`.`library` (`library_id`)
+    FOREIGN KEY (`organization_id`)
+    REFERENCES `Ummaconnect`.`library` (`organization_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -175,12 +175,12 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 =======
-DROP DATABASE IF EXISTS Ummaconnect;
-CREATE DATABASE Ummaconnect;
+DROP DATABASE IF EXISTS rooms;
+CREATE DATABASE rooms;
 
-create database Ummaconnect;
+create database rooms;
 
-use Ummahacks;
+use rooms;
 
 
 
