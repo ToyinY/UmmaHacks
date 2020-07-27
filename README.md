@@ -3,6 +3,8 @@ by Team Avatar
 
 Submission for UmmaHacks 2020 https://devpost.com/software/umma-connect
 
+YouTube Demo: https://youtu.be/Xc656URHJIU
+
 ## Inspiration
 Since the quarantine, the majority of social interactions have shifted to online platforms. Zoom has become a huge aspect of this, and although it is great, some aspects of Zoom do not emulate physical interactions as well and leaves one feeling lacking. 
 Our goal with ConnectRight is to create a platform that creates a sense of community while not losing that feeling of meeting others in a more personal setting. We imagined the idea of “libraries” because libraries or coffee shops are where we go to catch up and finish our work, settle down with a cup of coffee, and touch base with others in a productive way.
