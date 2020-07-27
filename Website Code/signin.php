@@ -28,7 +28,7 @@
 							if ($row['name'] == $name && $row['password'] == $password) {
 								$user_id=$row['User_id'];
 								$_SESSION['user_id']=$user_id; // saves the user's User_id so it can be used on other pages
-								header("Location: adminkit/examples/Dashboard.php");
+								header("Location: Dashboard/examples/Dashboard.php");
 								} else {
 									echo "Failed to log in. Please check your name and password or sign up!";
 								}
