@@ -1,5 +1,6 @@
 # ConnectRight
 by Team Avatar
+Submission for UmmaHacks 2020 https://devpost.com/software/umma-connect
 
 ## Inspiration
 Since the quarantine, the majority of social interactions have shifted to online platforms. Zoom has become a huge aspect of this, and although it is great, some aspects of Zoom do not emulate physical interactions as well and leaves one feeling lacking. 
