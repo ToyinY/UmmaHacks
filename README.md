@@ -1,5 +1,6 @@
 # ConnectRight
 by Team Avatar
+
 Submission for UmmaHacks 2020 https://devpost.com/software/umma-connect
 
 ## Inspiration
