@@ -341,7 +341,7 @@ button.fs-continue,
 	-webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
-
+/* Sets the image options for the form */
 .fs-fields .fs-radio-custom label.radio-mobile::after {
 	background-image: url(../img/mobile.svg);
 }
@@ -352,6 +352,13 @@ button.fs-continue,
 
 .fs-fields .fs-radio-custom label.radio-conversion::after {
 	background-image: url(../img/conversion.svg);
+}
+
+.fs-fields .fs-radio-custom label.radio-Avatar::after {
+	background-image: url(../img/WebsiteImages/1.png);
+}
+.fs-fields .fs-radio-custom label.radio-MCAT::after {
+	background-image: url(../img/WebsiteImages/2.png);
 }
 
 .fs-fields .fs-radio-custom label:hover::after,
